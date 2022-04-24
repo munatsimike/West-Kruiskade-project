@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment3">
+    <fragment
+        android:id="@+id/homeFragment3"
+        android:name="nl.project.westkruiskade.ui.fragments.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/home_layout">
+        <action
+            android:id="@+id/action_homeFragment3_to_artLandingPageFragment"
+            app:destination="@id/artLandingPageFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailPageFragment"
+        android:name="nl.project.westkruiskade.ui.fragments.DetailPageFragment"
+        android:label=""
+        tools:layout="@layout/detail_page_layout">
+        <action
+            android:id="@+id/action_detailPageFragment_to_nav_graph"
+            app:destination="@id/nav_graph"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_detailPageFragment_to_artLandingPageFragment"
+            app:destination="@id/artLandingPageFragment" />
+        <argument
+            android:name="exhibit"
+            app:argType="nl.project.westkruiskade.model.Exhibit" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/contactFormFragment2"
+        android:name="nl.project.westkruiskade.ui.fragments.ContactFormFragment"
+        android:label="Contact us"
+        tools:layout="@layout/contact_form_layout" />
+
+    <action android:id="@+id/action_global_artDetailPageFragment"
+        app:destination="@id/detailPageFragment"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right"/>
+    <fragment
+        android:id="@+id/scanBarcodeFragment"
+        android:name="nl.project.westkruiskade.ui.fragments.ScanBarcodeFragment"
+        android:label="scanner_fragment"
+        tools:layout="@layout/scanner_fragment" >
+        <action
+            android:id="@+id/action_scanBarcodeFragment_to_permissionFragment2"
+            app:destination="@id/permissionFragment2" />
+        <action
+            android:id="@+id/action_scanBarcodeFragment_to_homeFragment3"
+            app:destination="@id/homeFragment3"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/permissionFragment2"
+        android:name="nl.project.westkruiskade.ui.fragments.PermissionFragment"
+        android:label="permissions_fragment"
+        tools:layout="@layout/permissions_fragment" >
+        <action
+            android:id="@+id/action_permissionFragment2_to_scanBarcodeFragment"
+            app:destination="@id/scanBarcodeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/artLandingPageFragment"
+        android:name="nl.project.westkruiskade.ui.fragments.ArtLandingPageFragment"
+        android:label="Street Art"
+        tools:layout="@layout/art_landing_page_layout">
+    </fragment><action android:id="@+id/action_global_homeFragment3" app:destination="@id/homeFragment3"/>
+</navigation>

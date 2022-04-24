@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/detailPageFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="nl.project.westkruiskade.ui.fragments.DetailPageFragment">
+
+    <ImageView
+        android:id="@+id/ivExhibit"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/art_image"
+        android:scaleType="centerCrop" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardScroll"
+        android:layout_width="@dimen/size0dp"
+        android:layout_height="@dimen/size0dp"
+        android:backgroundTint="#B3000000"
+        android:tag="scrollUp"
+        app:cardCornerRadius="@dimen/size20dp"
+        app:cardMaxElevation="@dimen/cardview_compat_inset_shadow"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/card_guideline"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size500dp"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/size5dp">
+
+                <ToggleButton
+                    android:id="@+id/expandToggleBtn"
+                    android:layout_width="@dimen/size67dp"
+                    android:layout_height="@dimen/size35dp"
+                    android:background="@drawable/expand_collapse_back_ground"
+                    android:textOff=""
+                    android:textOn=""
+                    app:layout_constraintBottom_toTopOf="@+id/tvArtistName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvArtistName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size16dp"
+                    android:fontFamily="@font/roboto"
+                    android:letterSpacing="0.03"
+                    android:paddingTop="@dimen/padding5sp"
+                    android:text="@string/default_location"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/size20sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tv_exhibit_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:letterSpacing="0.01"
+                android:paddingLeft="@dimen/size10sp"
+                android:text="@string/default_location"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="19sp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size10dp"
+                android:layout_marginEnd="@dimen/size10dp"
+                android:layout_marginBottom="@dimen/size10sp">
+
+                <ImageView
+                    android:id="@+id/location_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/size8dp"
+                    android:contentDescription="@string/art_image"
+                    android:src="@drawable/ic_baseline_location_on_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvRoute"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
+                    android:letterSpacing="0.01"
+                    android:padding="@dimen/padding5sp"
+                    android:text="@string/see_location"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/teal_700"
+                    android:textSize="@dimen/size20sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/location_icon"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ToggleButton
+                    android:id="@+id/play_audio_icon"
+                    android:layout_width="@dimen/size45dp"
+                    android:layout_height="@dimen/size45dp"
+                    android:layout_marginStart="1dp"
+                    android:background="@drawable/open_audio_player_toggle_btn"
+                    android:textOff=""
+                    android:textOn=""
+                    app:layout_constraintBottom_toBottomOf="@+id/tvHeading"
+                    app:layout_constraintStart_toEndOf="@+id/tvHeading"
+                    app:layout_constraintTop_toTopOf="@+id/tvHeading" />
+
+                <TextView
+                    android:id="@+id/tvHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size16dp"
+                    android:fontFamily="@font/roboto"
+                    android:letterSpacing="0.01"
+                    android:text="@string/about_artist"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/size20sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ScrollView
+                android:id="@+id/detailScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:animateLayoutChanges="true">
+
+                <TextView
+                    android:id="@+id/tvAboutArtist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/size10sp"
+                    android:layout_marginRight="@dimen/size10sp"
+                    android:autoSizeTextType="none"
+                    android:fontFamily="@font/roboto"
+                    android:letterSpacing="0.04"
+                    android:lineSpacingExtra="@dimen/size5sp"
+                    android:text="@string/default_location"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/size18sp" />
+            </ScrollView>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/card_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <include
+        android:id="@+id/back_btn"
+       layout="@layout/back_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

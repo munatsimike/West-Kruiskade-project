@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/homeFragment3"
+        android:title="@string/home"
+        android:icon="@drawable/ic_baseline_home_24"
+        />
+    <item android:id="@+id/artLandingPageFragment"
+        android:title="@string/art"
+        android:icon="@drawable/ic_baseline_sentiment_satisfied_24"/>
+
+    <item android:id="@+id/permissionFragment2"
+        android:title="@string/scan_qr_code"
+        android:icon="@drawable/ic_baseline_qr_code_24"/>
+</menu>

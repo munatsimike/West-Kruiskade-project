@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColorLine"
+    android:orientation="vertical"
+    android:padding="@dimen/size8dp"
+    tools:context="nl.project.westkruiskade.ui.fragments.HomeFragment">
+
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:letterSpacing="0.01"
+        android:padding="@dimen/size7sp"
+        android:text="@string/west_kruiskade_tour_guide"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:textSize="@dimen/size22sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/heading"
+        app:layout_constraintTop_toBottomOf="@+id/heading">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/verticalGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="199dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/horizontalGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/artCardView"
+            android:layout_width="@dimen/size0dp"
+            android:layout_height="@dimen/size0dp"
+            android:layout_marginEnd="@dimen/size5dp"
+            app:cardCornerRadius="@dimen/size5dp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline2"
+            app:layout_constraintEnd_toStartOf="@+id/verticalGuideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/restaurantCardView">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/artImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/art_image"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/image_2" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="@dimen/size0dp"
+                    android:background="@drawable/black_rectangle"
+                    android:orientation="vertical"
+                    android:padding="@dimen/size5dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
+                        android:letterSpacing="@dimen/size0.01"
+                        android:text="@string/street_art"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/size18sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
+                        android:letterSpacing="@dimen/size0.01"
+                        android:text="@string/view_and_locate_over_200_n_street_art_pieces"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/size14sp"
+                        app:lineHeight="@dimen/size20sp" />
+                </LinearLayout>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/restaurantCardView"
+            android:layout_width="@dimen/size0dp"
+            android:layout_height="@dimen/size0dp"
+            app:barrierMargin="@dimen/size5dp"
+            app:cardCornerRadius="@dimen/size5dp"
+            app:layout_constraintBottom_toTopOf="@+id/horizontalGuideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/verticalGuideline"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/restaurantImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/restaurant_image"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/image_11" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="@dimen/size0dp"
+                    android:background="@drawable/black_rectangle"
+                    android:orientation="vertical"
+                    android:padding="@dimen/size5dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
+                        android:letterSpacing="@dimen/size0.01"
+                        android:text="@string/restaurants"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/size18sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
+                        android:letterSpacing="@dimen/size0.01"
+                        android:text="@string/taste_food_from_various_n_nationalities"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/size14sp"
+                        app:lineHeight="@dimen/size20sp" />
+
+                </LinearLayout>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/shoppingCardView"
+            android:layout_width="@dimen/size0dp"
+            android:layout_height="@dimen/size0dp"
+            android:layout_marginTop="@dimen/size5dp"
+            app:cardCornerRadius="@dimen/size5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/restaurantCardView"
+            app:layout_constraintStart_toStartOf="@+id/verticalGuideline"
+            app:layout_constraintTop_toBottomOf="@+id/restaurantCardView">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/shoppingImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/shopping_image"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/image_12"
+                    tools:ignore="ImageContrastCheck" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="@dimen/size0dp"
+                    android:background="@drawable/black_rectangle"
+                    android:orientation="vertical"
+                    android:padding="@dimen/size5dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
+                        android:letterSpacing="@dimen/size0.01"
+                        android:text="@string/shopping"
+                        android:textAlignment="center"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/size18sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
+                        android:letterSpacing="@dimen/size0.01"
+                        android:text="@string/shop_local_products_at_low_n_prices"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/size14sp"
+                        app:lineHeight="@dimen/size20sp" />
+                </LinearLayout>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="250dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/attractions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size8dp"
+        android:letterSpacing="@dimen/size0.01"
+        android:maxLines="2"
+        android:text="@string/west_kruiskade_tour_guide_ngo_for_one_of_our_featured_attractions"
+        android:textColor="#000000"
+        android:textSize="@dimen/size16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout4"
+        android:layout_width="@dimen/size0dp"
+        android:layout_height="@dimen/size0dp"
+        android:layout_marginTop="@dimen/size8dp"
+        android:background="@drawable/white_rectangle_no_stroke"
+        android:padding="@dimen/padding5sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/attractions">
+
+        <include
+            android:id="@+id/recycle_view"
+            layout="@layout/recycle_view_layout" />
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

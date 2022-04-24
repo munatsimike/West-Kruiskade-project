@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/white_rectangle_with_stroke"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="@dimen/size5dp"
+    tools:context="nl.project.westkruiskade.ui.fragments.DetailPageFragment">
+
+    <SeekBar
+        android:id="@+id/positionBar"
+        android:layout_width="120dp"
+        android:layout_height="@dimen/size18dp"
+        android:layout_marginTop="@dimen/size8dp"
+        android:progressTint="@color/teal_700"
+        android:thumbTint="@color/teal_700"
+        app:layout_constraintEnd_toStartOf="@+id/elapsedTimeLabel"
+        app:layout_constraintStart_toEndOf="@+id/remainingTimeLabel"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/elapsedTimeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/size8dp"
+        android:fontFamily="@font/roboto"
+        android:padding="1dp"
+        android:text="@string/_0_11"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/positionBar"
+        app:layout_constraintEnd_toStartOf="@+id/guideline12"
+        app:layout_constraintTop_toTopOf="@+id/positionBar" />
+
+    <TextView
+        android:id="@+id/remainingTimeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size8dp"
+        android:fontFamily="@font/roboto"
+        android:padding="1dp"
+        android:text="@string/_1_11"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/positionBar"
+        app:layout_constraintStart_toStartOf="@+id/guideline15"
+        app:layout_constraintTop_toTopOf="@+id/positionBar" />
+
+    <ToggleButton
+        android:id="@+id/playBtn"
+        android:layout_width="@dimen/size42dp"
+        android:layout_height="@dimen/size42dp"
+        android:layout_marginStart="@dimen/size8dp"
+        android:background="@drawable/play_btn_toggle"
+        android:textOff=""
+        android:textOn=""
+        app:layout_constraintBottom_toBottomOf="@+id/remainingTimeLabel"
+        app:layout_constraintEnd_toStartOf="@+id/guideline15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/remainingTimeLabel"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,UsingOnClickInXml" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="@dimen/size0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/positionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline12"
+        app:layout_constraintTop_toTopOf="@+id/positionBar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ToggleButton
+                android:id="@+id/muteBtn"
+                android:layout_width="@dimen/size32dp"
+                android:layout_height="@dimen/size32dp"
+                android:background="@drawable/volume_toggle_btn"
+                android:textOff=""
+                android:textOn=""
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <SeekBar
+                android:id="@+id/volumeBar"
+                android:layout_width="@dimen/size67dp"
+                android:layout_height="@dimen/size22dp"
+                android:max="100"
+                android:progress="50"
+                android:progressTint="@color/teal_700"
+                android:thumbTint="@color/teal_700"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/muteBtn"
+                app:layout_constraintTop_toTopOf="@+id/muteBtn" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="120dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="47dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
